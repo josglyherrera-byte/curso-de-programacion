@@ -1,0 +1,10 @@
+print("MENU  DE OPCIONES")
+print("1.Hamburguesa")
+print("2.Pizza")
+print("3.Ensalada")
+
+opcion = input("Opción (1,2,3): ")
+if opcion == "1": print("Hamburguesa")
+elif opcion == "2": print("Pizza")
+elif opcion == "3": print("Ensalada")
+else: print("Opción inválida")

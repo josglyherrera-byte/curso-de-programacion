@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto | Conéctate con Nosotros</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="contenedor-principal">
+        <header class="cabecera">
+            <h1><i class="fas fa-comments"></i> Contáctanos</h1>
+            <p class="subtitulo">Tu opinión es importante para nosotros. Estamos aquí para escucharte.</p>
+        </header>
+
+        <main class="contenido">
+            <div class="formulario-contenedor">
+                <div class="info-contacto">
+                    <h2><i class="fas fa-headset"></i> ¿En qué podemos ayudarte?</h2>
+                    <p>Completa el formulario y nuestro equipo se pondrá en contacto contigo en menos de 24 horas.</p>
+                    
+                    <div class="beneficios">
+                        <p><i class="fas fa-check-circle"></i> Respuesta rápida garantizada</p>
+                        <p><i class="fas fa-check-circle"></i> Atención personalizada</p>
+                        <p><i class="fas fa-check-circle"></i> Soporte profesional</p>
+                    </div>
+                </div>
+
+                <form class="formulario" id="formulario-contacto">
+                    <div class="grupo-formulario">
+                        <label for="nombre" class="etiqueta">
+                            <i class="fas fa-user"></i> Nombre completo
+                        </label>
+                        <input 
+                            type="text" 
+                            id="nombre" 
+                            name="nombre" 
+                            placeholder="Ej: María González Pérez" 
+                            required
+                            class="campo"
+                        >
+                        <div class="mensaje-error" id="error-nombre"></div>
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="email" class="etiqueta">
+                            <i class="fas fa-envelope"></i> Correo electrónico
+                        </label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="ejemplo@correo.com" 
+                            required
+                            class="campo"
+                        >
+                        <div class="mensaje-error" id="error-email"></div>
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="asunto" class="etiqueta">
+                            <i class="fas fa-tag"></i> Asunto
+                        </label>
+                        <select id="asunto" name="asunto" class="campo">
+                            <option value="" disabled selected>Selecciona el motivo de tu contacto</option>
+                            <option value="consulta">Consulta general</option>
+                            <option value="soporte">Soporte técnico</option>
+                            <option value="ventas">Información de ventas</option>
+                            <option value="trabajo">Oportunidades de trabajo</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="mensaje" class="etiqueta">
+                            <i class="fas fa-comment-dots"></i> Tu mensaje
+                        </label>
+                        <textarea 
+                            id="mensaje" 
+                            name="mensaje" 
+                            placeholder="Escribe aquí tu mensaje... (mínimo 20 caracteres)" 
+                            rows="6" 
+                            required
+                            class="campo"
+                        ></textarea>
+                        <div class="contador-caracteres">
+                            <span id="contador">0</span> / 500 caracteres
+                        </div>
+                        <div class="mensaje-error" id="error-mensaje"></div>
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label class="checkbox-etiqueta">
+                            <input type="checkbox" id="privacidad" name="privacidad" required>
+                            <span>Acepto la <a href="#" class="enlace">política de privacidad</a> y el tratamiento de mis datos</span>
+                        </label>
+                        <div class="mensaje-error" id="error-privacidad"></div>
+                    </div>
+
+                    <button type="submit" class="boton-enviar">
+                        <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                    </button>
+                    
+                    <div class="mensaje-exito" id="mensaje-exito"></div>
+                </form>
+            </div>
+        </main>
+
+        <footer class="pie">
+            <p><i class="far fa-copyright"></i> 2023 Formulario de Contacto | Todos los derechos reservados</p>
+            <p class="leyenda">Cada campo está vinculado con su etiqueta usando el atributo <strong>for</strong></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

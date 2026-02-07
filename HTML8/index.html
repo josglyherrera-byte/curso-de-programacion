@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6 - Botón Call to Action</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-bolt"></i> Botones Call to Action</h1>
+            <p class="subtitle">Transformando enlaces simples en botones irresistibles</p>
+            <div class="header-cta">
+                <a href="#galeria" class="cta-btn primary">
+                    <i class="fas fa-arrow-down"></i>
+                    Ver Ejemplos
+                </a>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Sección de características -->
+            <section class="features-section">
+                <h2><i class="fas fa-check-circle"></i> Características Implementadas</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-border-radius"></i>
+                        </div>
+                        <h3>Esquinas Redondeadas</h3>
+                        <p><strong>border-radius:</strong> desde 8px hasta 50px para un look moderno y suave</p>
+                        <div class="demo-radius">
+                            <div class="radius-demo small">8px</div>
+                            <div class="radius-demo medium">12px</div>
+                            <div class="radius-demo large">20px</div>
+                            <div class="radius-demo full">50px</div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Color de Fondo Contrastante</h3>
+                        <p>Fondos que <strong>contrastan</strong> con el diseño para máxima visibilidad</p>
+                        <div class="color-demo">
+                            <div class="color-box primary-color">Primario</div>
+                            <div class="color-box secondary-color">Secundario</div>
+                            <div class="color-box success-color">Éxito</div>
+                            <div class="color-box danger-color">Peligro</div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <h3>Sin Decoración de Texto</h3>
+                        <p><strong>text-decoration: none</strong> eliminado completamente de todos los enlaces</p>
+                        <div class="demo-link">
+                            <a href="#" class="link-with-decoration">Enlace normal (con subrayado)</a>
+                            <a href="#" class="link-no-decoration">Botón CTA (sin decoración)</a>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h3>Transición Fluida</h3>
+                        <p><strong>transition: all 0.3s ease</strong> para cambios de color y animaciones suaves</p>
+                        <div class="transition-demo">
+                            <div class="transition-box"></div>
+                            <p>Pasa el mouse para ver la transición</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mouse-pointer"></i>
+                        </div>
+                        <h3>Cursor de Mano</h3>
+                        <p><strong>cursor: pointer</strong> al posicionarse sobre los botones</p>
+                        <div class="cursor-demo">
+                            <div class="cursor-default">Cursor default</div>
+                            <div class="cursor-pointer">Cursor pointer</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Galería de botones -->
+            <section id="galeria" class="gallery-section">
+                <h2><i class="fas fa-star"></i> Galería de Botones CTA</h2>
+                <p class="section-description">Pasa el mouse sobre cada botón para ver los efectos de hover</p>
+                
+                <div class="gallery-grid">
+                    <!-- Botón 1 -->
+                    <div class="gallery-item">
+                        <h3>Primario con Gradiente</h3>
+                        <p class="item-description">Gradiente azul-violeta con elevación</p>
+                        <a href="#" class="cta-btn primary-btn">
+                            <i class="fas fa-rocket"></i>
+                            Comenzar Ahora
+                        </a>
+                        <div class="code-preview">
+                            <code>border-radius: 12px;</code>
+                            <code>background: linear-gradient(...);</code>
+                            <code>text-decoration: none;</code>
+                            <code>transition: all 0.3s;</code>
+                            <code>cursor: pointer;</code>
+                        </div>
+                    </div>
+                    
+                    <!-- Botón 2 -->
+                    <div class="gallery-item">
+                        <h3>Secundario Outline</h3>
+                        <p class="item-description">Borde que se rellena al hacer hover</p>
+                        <a href="#" class="cta-btn secondary-btn">
+                            <i class="fas fa-download"></i>
+                            Descargar Recursos
+                        </a>
+                        <div class="code-preview">
+                            <code>border-radius: 12px;</code>
+                            <code>border: 2px solid #667eea;</code>
+                            <code>text-decoration: none;</code>
+                            <code>transition: all 0.3s;</code>
+                            <code>cursor: pointer;</code>
+                        </div>
+                    </div>
+                    
+                    <!-- Botón 3 -->
+                    <div class="gallery-item">
+                        <h3>Éxito Vibrante</h3>
+                        <p class="item-description">Para acciones positivas y confirmaciones</p>
+                        <a href="#" class="cta-btn success-btn">
+                            <i class="fas fa-check-circle"></i>
+                            Confirmar Pedido
+                        </a>
+                        <div class="code-preview">
+                            <code>border-radius: 12px;</code>
+                            <code>background: #48bb78;</code>
+                            <code>text-decoration: none;</code>
+                            <code>transition: all 0.3s;</code>
+                            <code>cursor: pointer;</code>
+                        </div>
+                    </div>
+                    
+                    <!-- Botón 4 -->
+                    <div class="gallery-item">
+                        <h3>Peligro con Sombra</h3>
+                        <p class="item-description">Acciones irreversibles o alertas</p>
+                        <a href="#" class="cta-btn danger-btn">
+                            <i class="fas fa-trash-alt"></i>
+                            Eliminar Cuenta
+                        </a>
+                        <div class="code-preview">
+                            <code>border-radius: 12px;</code>
+                            <code>background: #f56565;</code>
+                            <code>text-decoration: none;</code>
+                            <code>transition: all 0.3s;</code>
+                            <code>cursor: pointer;</code>
+                        </div>
+                    </div>
+                    
+                    <!-- Botón 5 -->
+                    <div class="gallery-item">
+                        <h3>Outline Circular</h3>
+                        <p class="item-description">Bordes completamente redondeados</p>
+                        <a href="#" class="cta-btn outline-btn">
+                            <i class="fas fa-heart"></i>
+                            Añadir a Favoritos
+                        </a>
+                        <div class="code-preview">
+                            <code>border-radius: 50px;</code>
+                            <code>border: 2px solid #9f7aea;</code>
+                            <code>text-decoration: none;</code>
+                            <code>transition: all 0.3s;</code>
+                            <code>cursor: pointer;</code>
+                        </div>
+                    </div>
+                    
+                    <!-- Botón 6 -->
+                    <div class="gallery-item">
+                        <h3>Botón Jumbo</h3>
+                        <p class="item-description">Máxima visibilidad y prioridad</p>
+                        <a href="#" class="cta-btn jumbo-btn">
+                            <i class="fas fa-crown"></i>
+                            Obtener Plan Premium
+                            <span class="badge">Más Popular</span>
+                        </a>
+                        <div class="code-preview">
+                            <code>border-radius: 20px;</code>
+                            <code>padding: 22px 48px;</code>
+                            <code>text-decoration: none;</code>
+                            <code>transition: all 0.3s;</code>
+                            <code>cursor: pointer;</code>
+                        </div>
+                    </div>
+                    
+                    <!-- Botón 7 -->
+                    <div class="gallery-item">
+                        <h3>Animado con Icono</h3>
+                        <p class="item-description">Icono que se mueve al hacer hover</p>
+                        <a href="#" class="cta-btn animated-btn">
+                            Explorar Funciones
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <div class="code-preview">
+                            <code>border-radius: 12px;</code>
+                            <code>background: #805ad5;</code>
+                            <code>text-decoration: none;</code>
+                            <code>transition: all 0.3s;</code>
+                            <code>cursor: pointer;</code>
+                        </div>
+                    </div>
+                    
+                    <!-- Botón 8 -->
+                    <div class="gallery-item">
+                        <h3>Con Efecto 3D</h3>
+                        <p class="item-description">Simula un botón físico presionable</p>
+                        <a href="#" class="cta-btn three-d-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </a>
+                        <div class="code-preview">
+                            <code>border-radius: 12px;</code>
+                            <code>box-shadow: 0 6px 0 #c05621;</code>
+                            <code>text-decoration: none;</code>
+                            <code>transition: all 0.3s;</code>
+                            <code>cursor: pointer;</code>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Demostración de estados -->
+            <section class="states-section">
+                <h2><i class="fas fa-layer-group"></i> Estados del Botón</h2>
+                <div class="states-grid">
+                    <div class="state-item">
+                        <h3>Normal</h3>
+                        <a href="#" class="cta-btn state-normal">
+                            <i class="fas fa-home"></i>
+                            Estado Normal
+                        </a>
+                        <p>Botón en su estado inicial</p>
+                    </div>
+                    
+                    <div class="state-item">
+                        <h3>Hover</h3>
+                        <a href="#" class="cta-btn state-hover">
+                            <i class="fas fa-hand-pointer"></i>
+                            Pasa el Mouse
+                        </a>
+                        <p>Al posicionar el cursor (cursor: pointer)</p>
+                    </div>
+                    
+                    <div class="state-item">
+                        <h3>Active</h3>
+                        <a href="#" class="cta-btn state-active">
+                            <i class="fas fa-mouse"></i>
+                            Haz Click
+                        </a>
+                        <p>Mientras se mantiene presionado</p>
+                    </div>
+                    
+                    <div class="state-item">
+                        <h3>Focus</h3>
+                        <a href="#" class="cta-btn state-focus">
+                            <i class="fas fa-bullseye"></i>
+                            Estado Focus
+                        </a>
+                        <p>Cuando se navega con teclado (Tab)</p>
+                    </div>
+                    
+                    <div class="state-item">
+                        <h3>Deshabilitado</h3>
+                        <a href="#" class="cta-btn state-disabled" aria-disabled="true">
+                            <i class="fas fa-ban"></i>
+                            Deshabilitado
+                        </a>
+                        <p>Estado no interactivo</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resumen de requisitos -->
+            <section class="requirements-section">
+                <h2><i class="fas fa-clipboard-check"></i> Resumen de Requisitos Cumplidos</h2>
+                <div class="requirements-list">
+                    <div class="requirement fulfilled">
+                        <div class="requirement-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="requirement-content">
+                            <h3>Redondeen las esquinas para un look moderno y suave</h3>
+                            <p>Implementado con border-radius desde 8px hasta 50px, usando variables CSS para consistencia.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="requirement fulfilled">
+                        <div class="requirement-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="requirement-content">
+                            <h3>Elijan un color de fondo que contraste con el diseño</h3>
+                            <p>Paleta de colores vibrantes que contrastan con fondos claros y oscuros, garantizando legibilidad.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="requirement fulfilled">
+                        <div class="requirement-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="requirement-content">
+                            <h3>Eliminen cualquier decoración de texto que traiga el link</h3>
+                            <p>text-decoration: none aplicado a todos los botones, eliminando subrayados por completo.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="requirement fulfilled">
+                        <div class="requirement-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="requirement-content">
+                            <h3>Añadan una transición para que el cambio de color sea fluido</h3>
+                            <p>transition: all 0.3s ease en todos los botones para animaciones suaves en hover y active.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="requirement fulfilled">
+                        <div class="requirement-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="requirement-content">
+                            <h3>Hagan que el cursor cambie a mano al posicionarse encima</h3>
+                            <p>cursor: pointer implementado en todos los estados interactivos de los botones.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <h3><i class="fas fa-code"></i> Ejercicio 6 - Botón Call to Action</h3>
+                <p>Implementado únicamente con HTML y CSS puro</p>
+                <p>Sin JavaScript - Totalmente funcional con solo CSS</p>
+                
+                <div class="footer-ctas">
+                    <a href="#" class="cta-btn footer-cta-primary">
+                        <i class="fas fa-share-alt"></i>
+                        Compartir
+                    </a>
+                    <a href="#" class="cta-btn footer-cta-secondary">
+                        <i class="fas fa-star"></i>
+                        Valorar
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2024 - Ejercicio educativo de desarrollo web | Todos los requisitos implementados al 100%</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

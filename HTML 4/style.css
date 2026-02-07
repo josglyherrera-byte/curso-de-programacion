@@ -1,0 +1,377 @@
+/* RESET Y CONFIGURACIÓN BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* CABECERA */
+.cabecera {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.logo i {
+    color: #f1c40f;
+}
+
+.eslogan {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* *********************************************** */
+/* NAVEGACIÓN PRINCIPAL - REQUISITOS CUMPLIDOS */
+/* *********************************************** */
+
+.navegacion-principal {
+    background-color: #2c3e50;
+    width: 100%; /* Ocupa todo el ancho */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu {
+    /* REQUISITO: Eliminar puntos de la lista */
+    list-style: none;
+    
+    /* REQUISITO: Elementos alineados uno al lado del otro */
+    display: flex;
+    
+    /* REQUISITO: Espacio uniforme entre botones */
+    justify-content: space-around;
+    
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    /* REQUISITO: Elementos alineados horizontalmente */
+    display: flex;
+    flex: 1;
+}
+
+.enlace-nav {
+    /* REQUISITO: Quitar subrayado azul predeterminado */
+    text-decoration: none;
+    
+    color: #ecf0f1;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 500;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+    border-bottom: 3px solid transparent;
+}
+
+/* REQUISITO: Cambiar color cuando el mouse pase por encima (hover) */
+.enlace-nav:hover {
+    background-color: #34495e;
+    color: #f1c40f;
+    border-bottom: 3px solid #f1c40f;
+}
+
+.enlace-nav.activo {
+    background-color: #3498db;
+    color: white;
+    border-bottom: 3px solid #f1c40f;
+}
+
+.enlace-nav i {
+    font-size: 1.2rem;
+}
+
+/* CONTENIDO PRINCIPAL */
+.contenido {
+    padding: 40px 0;
+}
+
+.seccion {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ecf0f1;
+}
+
+h3 {
+    color: #3498db;
+    margin-bottom: 15px;
+}
+
+.caracteristicas-navegacion {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.caracteristica ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.caracteristica li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.caracteristica li:before {
+    content: "✓";
+    color: #27ae60;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.demo-hover {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.item-demo {
+    padding: 12px 24px;
+    background-color: #2c3e50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.item-demo:hover {
+    background-color: #34495e;
+    color: #f1c40f;
+    border-bottom: 3px solid #f1c40f;
+    transform: translateY(-2px);
+}
+
+.activo-demo {
+    background-color: #3498db;
+}
+
+/* EJEMPLOS DE CÓDIGO */
+.codigo-ejemplo {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    border-left: 4px solid #3498db;
+}
+
+.codigo-ejemplo pre {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+}
+
+/* TIPOS DE NAVEGACIÓN */
+.tipos-navegacion {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.tipo-nav {
+    text-align: center;
+}
+
+.nav-ejemplo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    min-height: 120px;
+    align-items: center;
+}
+
+.nav-ejemplo.horizontal {
+    flex-direction: row;
+    gap: 15px;
+}
+
+.nav-ejemplo.vertical {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.nav-ejemplo.hamburguesa {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.linea {
+    width: 30px;
+    height: 4px;
+    background-color: #2c3e50;
+    border-radius: 2px;
+}
+
+.nav-ejemplo a {
+    text-decoration: none;
+    color: #2c3e50;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    border: 1px solid #ddd;
+}
+
+.nav-ejemplo a:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+/* NAVEGACIÓN SECUNDARIA (Ejemplo alternativo) */
+.navegacion-secundaria {
+    background-color: #34495e;
+    width: 100%; /* Ocupa todo el ancho */
+    padding: 15px 0;
+    margin-top: 40px;
+}
+
+.menu-secundario {
+    /* REQUISITO: Eliminar puntos de la lista */
+    list-style: none;
+    
+    /* REQUISITO: Elementos alineados uno al lado del otro */
+    display: flex;
+    
+    /* REQUISITO: Espacio uniforme entre botones */
+    justify-content: center;
+    gap: 40px;
+    
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+.menu-secundario a {
+    /* REQUISITO: Quitar subrayado azul predeterminado */
+    text-decoration: none;
+    
+    color: #bdc3c7;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    padding: 5px 0;
+    position: relative;
+}
+
+/* REQUISITO: Cambiar color cuando el mouse pase por encima (hover) */
+.menu-secundario a:hover {
+    color: #f1c40f;
+}
+
+.menu-secundario a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #f1c40f;
+    transition: width 0.3s ease;
+}
+
+.menu-secundario a:hover:after {
+    width: 100%;
+}
+
+/* PIE DE PÁGINA */
+.pie {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 0;
+}
+
+.leyenda {
+    font-style: italic;
+    margin-top: 10px;
+    color: #bdc3c7;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+    }
+    
+    .menu li {
+        width: 100%;
+    }
+    
+    .menu-secundario {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .caracteristicas-navegacion {
+        grid-template-columns: 1fr;
+    }
+    
+    .tipos-navegacion {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,71 @@
+/* --- DEFINICIÓN DE VARIABLES (MODO CLARO) --- */
+:root {
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --accent: #3b82f6; /* Azul */
+    --accent-hover: #2563eb;
+    --shadow: 0 10px 25px rgba(0,0,0,0.05);
+    --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- REDEFINICIÓN PARA MODO OSCURO --- */
+body.dark-mode {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --accent: #60a5fa; /* Azul más brillante para contraste */
+    --shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* --- APLICACIÓN DE VARIABLES --- */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Inter', system-ui, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color var(--transition); /* Transición suave de fondo */
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    max-width: 400px;
+    text-align: center;
+    transition: all var(--transition);
+}
+
+h1 { color: var(--accent); margin-bottom: 1rem; }
+
+p { color: var(--text-muted); line-height: 1.6; }
+
+.box {
+    margin-top: 20px;
+    padding: 15px;
+    background: var(--accent);
+    color: white;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+/* El Botón de Cambio */
+.btn-toggle {
+    background: var(--text-main);
+    color: var(--card-bg);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    transition: transform 0.2s;
+}
+
+.btn-toggle:active { transform: scale(0.95); }

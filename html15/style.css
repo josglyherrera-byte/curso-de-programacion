@@ -1,0 +1,94 @@
+/* --- ESTILOS BASE (ESCRITORIO) --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f2f5;
+    font-size: 16px; /* Tamaño base */
+}
+
+.container {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    /* Layout de 2 columnas: Sidebar izquierda, Contenido derecha */
+    grid-template-columns: 300px 1fr;
+    grid-template-areas: 
+        "header header"
+        "sidebar content"
+        "footer footer";
+}
+
+.header { grid-area: header; background: #1e293b; color: white; padding: 40px; border-radius: 15px; text-align: center; }
+.content { grid-area: content; background: white; padding: 30px; border-radius: 15px; }
+.sidebar { grid-area: sidebar; background: #e2e8f0; padding: 20px; border-radius: 15px; }
+.footer { grid-area: footer; text-align: center; padding: 20px; color: #64748b; }
+
+.resp-img { width: 100%; border-radius: 10px; height: auto; margin: 20px 0; }
+
+/* Tarjeta de Producto Horizontal en escritorio */
+.product-card {
+    display: flex;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.img-box { width: 40%; }
+.img-box img { width: 100%; height: 100%; object-fit: cover; }
+.info { padding: 20px; }
+
+/* -------------------------------------------
+   🚀 MAGIA RESPONSIVA (Móvil)
+---------------------------------------------- */
+
+@media (max-width: 768px) {
+    /* 1. Cambiamos Grid a una sola columna */
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "content"
+            "sidebar"
+            "footer";
+        padding: 10px; /* Menos margen en móvil */
+    }
+
+    /* 2. Aumentamos legibilidad */
+    body {
+        font-size: 18px; /* Texto más grande para pulgares y ojos cansados */
+    }
+
+    h1 { font-size: 1.5rem; }
+
+    /* 3. Ocultamos elementos innecesarios */
+    .desktop-only {
+        display: none;
+    }
+
+    /* 4. Transformamos la tarjeta de Horizontal a Vertical */
+    .product-card {
+        flex-direction: column;
+    }
+    .img-box {
+        width: 100%;
+        height: 200px;
+    }
+
+    /* 5. Botones más grandes (fáciles de tocar) */
+    .btn {
+        width: 100%;
+        padding: 15px;
+        font-size: 1.1rem;
+        margin-top: 10px;
+    }
+
+    /* Evitar scroll horizontal */
+    img {
+        max-width: 100%;
+        display: block;
+    }
+}

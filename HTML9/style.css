@@ -1,0 +1,60 @@
+/* Configuración General */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Estilo de la Tabla */
+table {
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 800px;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden; /* Para que los bordes redondeados se vean */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Encabezado */
+thead tr {
+    background-color: #2c3e50; /* Color oscuro */
+    color: #ffffff;            /* Texto blanco */
+    text-align: left;
+    font-weight: bold;         /* Negrita */
+}
+
+/* Padding de las celdas */
+th, td {
+    padding: 15px 20px;
+}
+
+/* Efecto Cebra: Filas Impares */
+tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Efecto Cebra: Filas Pares */
+tbody tr:nth-child(even) {
+    background-color: #f2f9ff; /* Un azul muy suave */
+}
+
+/* Efecto Hover al pasar el mouse */
+tbody tr:hover {
+    background-color: #d1e8ff;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Un pequeño detalle para la última fila */
+tbody tr:last-of-type {
+    border-bottom: 3px solid #3498db;
+}

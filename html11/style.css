@@ -1,0 +1,121 @@
+/* CONFIGURACIÓN GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Para que el botón de inicio suba suavemente */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+/* 8. PODER CON FLEXBOX (Header) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo { font-size: 1.5rem; font-weight: bold; color: #0077b6; }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+/* 10. HERO SECTION */
+.hero {
+    height: 60vh;
+    background-image: url('https://images.unsplash.com/photo-1551244072-5d12893278ab?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Filtro oscuro */
+    color: white;
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+}
+
+.hero-overlay h1 { font-size: 3rem; margin-bottom: 10px; }
+
+/* 9. TABLA CEBRA */
+.content { padding: 50px 10%; text-align: center; }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td { padding: 15px; text-align: left; }
+
+/* Cabecera oscura, blanca y negrita */
+thead {
+    background-color: #023e8a;
+    color: white;
+    font-weight: bold;
+}
+
+/* Efecto Cebra */
+tbody tr:nth-child(even) { background-color: #caf0f8; } /* Pares */
+tbody tr:nth-child(odd) { background-color: #ffffff; }  /* Impares */
+
+/* Hover resaltado */
+tbody tr:hover {
+    background-color: #90e0ef;
+    cursor: pointer;
+}
+
+/* 11. POSICIONAMIENTO FIJO (BOTÓN CRACK) */
+.btn-top {
+    position: fixed;        /* Elemento estático al navegar */
+    bottom: 30px;           /* Distancia desde el borde inferior */
+    right: 30px;            /* Distancia desde el borde derecho */
+    width: 60px;
+    height: 60px;
+    background-color: #00b4d8; /* Color vibrante */
+    color: white;
+    border-radius: 50%;     /* Forma circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;           /* Que nada lo tape */
+    text-decoration: none;
+    font-size: 28px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: 0.3s ease;
+}
+
+.btn-top:hover {
+    transform: scale(1.1);
+    background-color: #0077b6;
+}
+
+/* Espaciador para generar scroll */
+.spacer { height: 500px; }
+.extra-content { padding: 50px 10%; background: #0077b6; color: white; text-align: center; }

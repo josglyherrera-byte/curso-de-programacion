@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegación Horizontal | Menú Moderno</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="cabecera">
+        <div class="contenedor">
+            <div class="logo">
+                <h1><i class="fas fa-compass"></i> NaviWeb</h1>
+                <p class="eslogan">Navegación intuitiva, experiencias excepcionales</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- BARRA DE NAVEGACIÓN PRINCIPAL -->
+    <nav class="navegacion-principal">
+        <div class="contenedor">
+            <ul class="menu">
+                <li><a href="#inicio" class="enlace-nav activo">
+                    <i class="fas fa-home"></i>
+                    <span>Inicio</span>
+                </a></li>
+                <li><a href="#servicios" class="enlace-nav">
+                    <i class="fas fa-cogs"></i>
+                    <span>Servicios</span>
+                </a></li>
+                <li><a href="#portafolio" class="enlace-nav">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Portafolio</span>
+                </a></li>
+                <li><a href="#nosotros" class="enlace-nav">
+                    <i class="fas fa-users"></i>
+                    <span>Nosotros</span>
+                </a></li>
+                <li><a href="#blog" class="enlace-nav">
+                    <i class="fas fa-blog"></i>
+                    <span>Blog</span>
+                </a></li>
+                <li><a href="#contacto" class="enlace-nav">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contacto</span>
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="contenido">
+        <div class="contenedor">
+            <section class="seccion">
+                <h2>Navegación Horizontal Perfecta</h2>
+                <p>Una barra de navegación efectiva es el corazón de cualquier sitio web. Proporciona orientación, estructura y una experiencia de usuario fluida.</p>
+                
+                <div class="caracteristicas-navegacion">
+                    <div class="caracteristica">
+                        <h3><i class="fas fa-check-circle"></i> Elementos Clave</h3>
+                        <ul>
+                            <li>Lista de enlaces dentro de una etiqueta <code>&lt;nav&gt;</code></li>
+                            <li>Elementos alineados horizontalmente</li>
+                            <li>Sin puntos de lista (eliminados con CSS)</li>
+                            <li>Espacios uniformes entre botones</li>
+                            <li>Sin subrayado predeterminado</li>
+                            <li>Efectos hover para interactividad</li>
+                            <li>Ocupa el 100% del ancho disponible</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="caracteristica">
+                        <h3><i class="fas fa-mouse-pointer"></i> Efectos Hover</h3>
+                        <p>Pasa el mouse sobre los elementos del menú para ver los efectos:</p>
+                        <div class="demo-hover">
+                            <div class="item-demo activo-demo">Inicio</div>
+                            <div class="item-demo">Servicios</div>
+                            <div class="item-demo">Portafolio</div>
+                            <div class="item-demo">Nosotros</div>
+                        </div>
+                        <p>Los enlaces cambian de color, tienen animación suave y feedback visual inmediato.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="seccion">
+                <h2>Código de la Navegación</h2>
+                <div class="codigo-ejemplo">
+                    <h3>HTML</h3>
+                    <pre><code>&lt;nav class="navegacion-principal"&gt;
+  &lt;ul class="menu"&gt;
+    &lt;li&gt;&lt;a href="#inicio"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#servicios"&gt;Servicios&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#portafolio"&gt;Portafolio&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#nosotros"&gt;Nosotros&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+                    
+                    <h3>CSS</h3>
+                    <pre><code>.menu {
+  list-style: none; /* Elimina puntos */
+  padding: 0;
+  margin: 0;
+  display: flex; /* Alineación horizontal */
+  justify-content: space-around; /* Espacio uniforme */
+}
+
+.menu a {
+  text-decoration: none; /* Sin subrayado */
+  color: #333;
+  padding: 15px 20px;
+  display: block;
+}
+
+.menu a:hover {
+  color: #3498db; /* Cambio de color en hover */
+  background: #f5f5f5;
+}</code></pre>
+                </div>
+            </section>
+            
+            <section class="seccion">
+                <h2>Tipos de Navegación</h2>
+                <div class="tipos-navegacion">
+                    <div class="tipo-nav">
+                        <div class="nav-ejemplo horizontal">
+                            <a href="#">Inicio</a>
+                            <a href="#">Servicios</a>
+                            <a href="#">Contacto</a>
+                        </div>
+                        <p><strong>Horizontal</strong> - Ideal para escritorio</p>
+                    </div>
+                    
+                    <div class="tipo-nav">
+                        <div class="nav-ejemplo vertical">
+                            <a href="#">Inicio</a>
+                            <a href="#">Servicios</a>
+                            <a href="#">Contacto</a>
+                        </div>
+                        <p><strong>Vertical</strong> - Para menús laterales</p>
+                    </div>
+                    
+                    <div class="tipo-nav">
+                        <div class="nav-ejemplo hamburguesa">
+                            <div class="linea"></div>
+                            <div class="linea"></div>
+                            <div class="linea"></div>
+                        </div>
+                        <p><strong>Hamburguesa</strong> - Para dispositivos móviles</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- SEGUNDA BARRA DE NAVEGACIÓN (Ejemplo alternativo) -->
+    <nav class="navegacion-secundaria">
+        <div class="contenedor">
+            <ul class="menu-secundario">
+                <li><a href="#terminos">Términos de Uso</a></li>
+                <li><a href="#privacidad">Política de Privacidad</a></li>
+                <li><a href="#cookies">Cookies</a></li>
+                <li><a href="#accesibilidad">Accesibilidad</a></li>
+                <li><a href="#mapa">Mapa del Sitio</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <footer class="pie">
+        <div class="contenedor">
+            <p><i class="far fa-copyright"></i> 2023 Navegación Horizontal | Ejemplo educativo de menú web</p>
+            <p class="leyenda">"Sin navegación no hay experiencia de usuario, equipo!"</p>
+        </div>
+    </footer>
+</body>
+</html>

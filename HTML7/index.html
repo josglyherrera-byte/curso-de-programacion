@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de Caja - Servicios Web</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* BOX-SIZING BORDER-BOX PARA TODOS LOS ELEMENTOS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1300px;
+            width: 100%;
+            padding: 20px;
+        }
+        
+        /* ENCABEZADO */
+        .hero {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 24px;
+            border: 3px solid #3b82f6;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #3b82f6);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientFlow 4s ease infinite;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            color: #cbd5e1;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        /* CONTENEDOR DE TARJETAS */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        /* TARJETA BASE */
+        .service-card {
+            background: #ffffff;
+            border: 8px solid;
+            border-radius: 20px;
+            padding: 40px 35px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        /* COLOR DE FONDO DISTINTO PARA CADA TARJETA */
+        .card-1 {
+            background-color: #f0f9ff;
+            border-color: #0ea5e9;
+            border-style: solid;
+        }
+        
+        .card-2 {
+            background-color: #fef7cd;
+            border-color: #f59e0b;
+            border-style: double;
+            border-width: 12px;
+        }
+        
+        .card-3 {
+            background-color: #f5f3ff;
+            border-color: #8b5cf6;
+            border-style: dashed;
+            border-width: 10px;
+        }
+        
+        /* EFECTO HOVER */
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card-1:hover {
+            background-color: #e0f2fe;
+        }
+        
+        .card-2:hover {
+            background-color: #fef3c7;
+        }
+        
+        .card-3:hover {
+            background-color: #ede9fe;
+        }
+        
+        /* CONTENIDO DE LA TARJETA */
+        .card-icon {
+            font-size: 3.8rem;
+            margin-bottom: 30px;
+            width: 90px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .card-1 .card-icon {
+            color: #0ea5e9;
+            background-color: rgba(14, 165, 233, 0.15);
+            border: 4px solid #0ea5e9;
+        }
+        
+        .card-2 .card-icon {
+            color: #f59e0b;
+            background-color: rgba(245, 158, 11, 0.15);
+            border: 6px double #f59e0b;
+        }
+        
+        .card-3 .card-icon {
+            color: #8b5cf6;
+            background-color: rgba(139, 92, 246, 0.15);
+            border: 5px dashed #8b5cf6;
+        }
+        
+        .card-title {
+            font-size: 2rem;
+            color: #1e293b;
+            margin-bottom: 25px;
+            font-weight: 800;
+            line-height: 1.3;
+        }
+        
+        .card-description {
+            font-size: 1.15rem;
+            color: #475569;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .features-list {
+            list-style: none;
+            margin: 30px 0;
+        }
+        
+        .features-list li {
+            padding: 12px 0;
+            color: #4b5563;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            font-size: 1.05rem;
+        }
+        
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .features-list i {
+            margin-right: 12px;
+            font-size: 1.1rem;
+        }
+        
+        .card-1 .features-list i {
+            color: #0ea5e9;
+        }
+        
+        .card-2 .features-list i {
+            color: #f59e0b;
+        }
+        
+        .card-3 .features-list i {
+            color: #8b5cf6;
+        }
+        
+        /* BOTÓN DE TARJETA */
+        .card-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 3px solid;
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .card-1 .card-button {
+            background-color: #0ea5e9;
+            border-color: #0ea5e9;
+            color: white;
+        }
+        
+        .card-2 .card-button {
+            background-color: #f59e0b;
+            border-color: #f59e0b;
+            color: white;
+        }
+        
+        .card-3 .card-button {
+            background-color: #8b5cf6;
+            border-color: #8b5cf6;
+            color: white;
+        }
+        
+        .card-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-1 .card-button:hover {
+            background-color: white;
+            color: #0ea5e9;
+        }
+        
+        .card-2 .card-button:hover {
+            background-color: white;
+            color: #f59e0b;
+        }
+        
+        .card-3 .card-button:hover {
+            background-color: white;
+            color: #8b5cf6;
+        }
+        
+        /* DEMOSTRACIÓN VISUAL DEL MODELO DE CAJA */
+        .box-model-demo {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 80px;
+            border: 5px solid #10b981;
+            color: #1e293b;
+        }
+        
+        .box-model-demo h2 {
+            font-size: 2.5rem;
+            color: #10b981;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .demo-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        
+        .demo-box {
+            width: 250px;
+            height: 180px;
+            background-color: #f1f5f9;
+            border: 25px solid #f59e0b;
+            padding: 30px;
+            position: relative;
+            border-radius: 10px;
+        }
+        
+        .demo-content {
+            width: 100%;
+            height: 100%;
+            background-color: #3b82f6;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .demo-label {
+            position: absolute;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .margin-label {
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ef4444;
+        }
+        
+        .border-label {
+            top: -30px;
+            left: -40px;
+            color: #f59e0b;
+        }
+        
+        .padding-label {
+            top: 10px;
+            left: 10px;
+            color: #10b981;
+        }
+        
+        .content-label {
+            color: white;
+        }
+        
+        .demo-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .demo-text h3 {
+            font-size: 1.8rem;
+            color: #1e293b;
+            margin-bottom: 20px;
+        }
+        
+        .demo-text p {
+            font-size: 1.15rem;
+            color: #4b5563;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        /* ANIMACIONES */
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .service-card {
+            animation: floatCard 6s ease-in-out infinite;
+        }
+        
+        .card-1 { animation-delay: 0s; }
+        .card-2 { animation-delay: 0.2s; }
+        .card-3 { animation-delay: 0.4s; }
+        
+        /* RESPONSIVE */
+        @media (max-width: 1200px) {
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .service-card {
+                padding: 30px 25px;
+            }
+            
+            .demo-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <h1>El Arte del Modelo de Caja</h1>
+            <p>Cada elemento en la web tiene su espacio vital. Aprende a dominar márgenes, bordes y padding para crear diseños que respiren armonía.</p>
+        </header>
+        
+        <main class="cards-grid">
+            <!-- Tarjeta 1 -->
+            <article class="service-card card-1">
+                <div class="card-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h2 class="card-title">Desarrollo Frontend Avanzado</h2>
+                <p class="card-description">
+                    Creamos interfaces web con un dominio completo del modelo de caja. Cada elemento tiene su espacio definido con márgenes precisos y padding que permite que el contenido respire.
+                </p>
+                <ul class="features-list">
+                    <li><i class="fas fa-check-circle"></i> Diseño responsive con Flexbox y Grid</li>
+                    <li><i class="fas fa-check-circle"></i> Animaciones CSS fluidas</li>
+                    <li><i class="fas fa-check-circle"></i> Optimización de rendimiento</li>
+                    <li><i class="fas fa-check-circle"></i> Accesibilidad Web (WCAG)</li>
+                </ul>
+                <a href="#" class="card-button">
+                    <span>Explorar Servicio</span>
+                    <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+                </a>
+            </article>
+            
+            <!-- Tarjeta 2 -->
+            <article class="service-card card-2">
+                <div class="card-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h2 class="card-title">Diseño UI/UX Profesional</h2>
+                <p class="card-description">
+                    El espacio entre elementos es tan importante como los elementos mismos. Diseñamos interfaces donde cada píxel cuenta y el modelo de caja se convierte en arte.
+                </p>
+                <ul class="features-list">
+                    <li><i class="fas fa-check-circle"></i> Prototipado interactivo</li>
+                    <li><i class="fas fa-check-circle"></i> Sistemas de diseño consistentes</li>
+                    <li><i class="fas fa-check-circle"></i> Psicología del color aplicada</li>
+                    <li><i class="fas fa-check-circle"></i> Pruebas de usabilidad A/B</li>
+                </ul>
+                <a href="#" class="card-button">
+                    <span>Ver Portafolio</span>
+                    <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+                </a>
+            </article>
+            
+            <!-- Tarjeta 3 -->
+            <article class="service-card card-3">
+                <div class="card-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h2 class="card-title">Optimización de Rendimiento</h2>
+                <p class="card-description">
+                    Un modelo de caja eficiente mejora significativamente el rendimiento. Optimizamos cada aspecto del diseño para maximizar velocidad sin sacrificar calidad visual.
+                </p>
+                <ul class="features-list">
+                    <li><i class="fas fa-check-circle"></i> Auditoría de rendimiento completa</li>
+                    <li><i class="fas fa-check-circle"></i> Minificación y compresión</li>
+                    <li><i class="fas fa-check-circle"></i> Optimización de imágenes</li>
+                    <li><i class="fas fa-check-circle"></i> Carga diferida (Lazy Loading)</li>
+                </ul>
+                <a href="#" class="card-button">
+                    <span>Analizar Mi Sitio</span>
+                    <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+                </a>
+            </article>
+        </main>
+        
+        <section class="box-model-demo">
+            <h2>Modelo de Caja Visualizado</h2>
+            <div class="demo-container">
+                <div class="demo-box">
+                    <div class="demo-label margin-label">Margin</div>
+                    <div class="demo-label border-label">Border</div>
+                    <div class="demo-label padding-label">Padding</div>
+                    <div class="demo-content">
+                        <span class="content-label">Content</span>
+                    </div>
+                </div>
+                
+                <div class="demo-text">
+                    <h3>¿Cómo funciona el Modelo de Caja?</h3>
+                    <p><strong>Margin:</strong> Espacio externo que separa el elemento de otros elementos.</p>
+                    <p><strong>Border:</strong> Línea que rodea el padding y el contenido.</p>
+                    <p><strong>Padding:</strong> Espacio interno entre el contenido y el borde.</p>
+                    <p><strong>Content:</strong> El área donde se muestra el contenido (texto, imágenes, etc.).</p>
+                    <p style="margin-top: 20px; font-weight: bold; color: #3b82f6;">Con <code>box-sizing: border-box</code>, el ancho y alto incluyen padding y border, ¡sin cálculos locos!</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Interactividad para las tarjetas
+            const cards = document.querySelectorAll('.service-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    // Evitar que se active cuando se hace clic en el botón
+                    if (e.target.tagName === 'A' || e.target.closest('a')) return;
+                    
+                    // Animación de clic
+                    this.style.transform = 'scale(0.98)';
+                    
+                    // Restaurar después de un momento
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 200);
+                    
+                    // Mostrar detalles de la tarjeta
+                    const title = this.querySelector('.card-title').textContent;
+                    const color = this.classList.contains('card-1') ? 'azul' : 
+                                 this.classList.contains('card-2') ? 'naranja' : 'púrpura';
+                    
+                    // Crear un pequeño mensaje emergente
+                    const message = document.createElement('div');
+                    message.style.cssText = `
+                        position: fixed;
+                        top: 20px;
+                        right: 20px;
+                        background: rgba(30, 41, 59, 0.95);
+                        color: white;
+                        padding: 15px 25px;
+                        border-radius: 10px;
+                        border-left: 5px solid #3b82f6;
+                        z-index: 1000;
+                        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+                        font-weight: bold;
+                        animation: slideIn 0.3s ease;
+                    `;
+                    message.innerHTML = `
+                        <div>${title}</div>
+                        <small style="color:#cbd5e1">Color de fondo: ${color}</small>
+                    `;
+                    document.body.appendChild(message);
+                    
+                    // Remover después de 3 segundos
+                    setTimeout(() => {
+                        message.style.animation = 'slideOut 0.3s ease';
+                        setTimeout(() => {
+                            if (message.parentNode) {
+                                message.parentNode.removeChild(message);
+                            }
+                        }, 300);
+                    }, 3000);
+                });
+            });
+            
+            // Agregar animación para el modelo de caja demo
+            const demoBox = document.querySelector('.demo-box');
+            const labels = document.querySelectorAll('.demo-label');
+            
+            setInterval(() => {
+                demoBox.style.borderColor = getRandomColor();
+            }, 3000);
+            
+            // Cambiar color de las etiquetas secuencialmente
+            let labelIndex = 0;
+            setInterval(() => {
+                labels.forEach(label => label.style.color = '#6b7280');
+                labels[labelIndex].style.color = getRandomColor();
+                labelIndex = (labelIndex + 1) % labels.length;
+            }, 1000);
+            
+            // Función para color aleatorio
+            function getRandomColor() {
+                const colors = ['#3b82f6', '#10b981', '#8b5cf6', '#f59e0b', '#ef4444'];
+                return colors[Math.floor(Math.random() * colors.length)];
+            }
+            
+            // Agregar estilos para animaciones de mensajes
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+                @keyframes slideOut {
+                    from { transform: translateX(0); opacity: 1; }
+                    to { transform: translateX(100%); opacity: 0; }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>

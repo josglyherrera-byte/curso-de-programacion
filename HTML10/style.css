@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hero {
+    /* Imagen de fondo con filtro oscuro integrado */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                      url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80');
+    
+    /* Propiedades clave */
+    background-size: cover;       /* No se deforma, cubre todo */
+    background-position: center;  /* Siempre centrada */
+    background-attachment: fixed; /* Opcional: efecto parallax suave */
+    
+    /* Altura y centrado */
+    height: 80vh;                 /* 80% de la altura de la pantalla */
+    display: flex;
+    justify-content: center;      /* Centrado horizontal */
+    align-items: center;          /* Centrado vertical */
+    text-align: center;
+    color: white;                 /* Texto resaltado */
+}
+
+.hero-content h1 {
+    font-size: 4rem;              /* Título gigante */
+    font-family: 'Arial Black', sans-serif;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 300;
+}
+
+/* Un botón para darle el toque final */
+.btn-hero {
+    margin-top: 25px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-hero:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}

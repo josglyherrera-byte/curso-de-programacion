@@ -1,0 +1,319 @@
+/* IMPORTACIÓN DE FUENTES YA INCLUIDA EN HTML */
+
+/* RESET Y CONFIGURACIÓN BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0f172a; /* Fondo oscuro moderno */
+    color: #e2e8f0; /* Color de texto principal claro */
+    line-height: 1.8; /* Interlineado aumentado para mejor legibilidad */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.contenedor {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* CABECERA - ESTILO VIBRANTE */
+.cabecera {
+    background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%); /* Gradiente violeta-azul */
+    padding: 60px 0;
+    text-align: center;
+    margin-bottom: 60px;
+    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+}
+
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800; /* Peso de fuente mayor para destacar */
+    font-size: 3.5rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.logo span {
+    color: #fbbf24; /* Amarillo vibrante para contraste */
+}
+
+.slogan {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 1.3rem;
+    color: #dbeafe;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* CONTENIDO PRINCIPAL */
+.contenido-principal {
+    flex: 1;
+    padding-bottom: 60px;
+}
+
+/* SECCIONES - MÁRGENES PARA RESPIRAR */
+.seccion {
+    background: rgba(30, 41, 59, 0.8); /* Fondo semitransparente */
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.seccion:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(124, 58, 237, 0.2);
+}
+
+.seccion.destacada {
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(59, 130, 246, 0.2));
+    border: 1px solid rgba(124, 58, 237, 0.3);
+}
+
+/* TÍTULOS - ALINEACIÓN Y DESTAQUE */
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700; /* Peso de fuente mayor */
+    font-size: 2.2rem;
+    color: #60a5fa; /* Azul claro moderno */
+    margin-bottom: 25px;
+    text-align: left; /* Alineación según importancia */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600; /* Peso intermedio */
+    font-size: 1.6rem;
+    color: #fbbf24; /* Amarillo vibrante */
+    margin-bottom: 20px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #34d399; /* Verde vibrante */
+    margin-bottom: 15px;
+}
+
+/* PÁRRAFOS - LEGIBILIDAD MEJORADA */
+p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #cbd5e1; /* Gris claro para buen contraste */
+    text-align: justify; /* Texto justificado para apariencia limpia */
+}
+
+.cta p {
+    text-align: center; /* Alineación centrada para llamada a la acción */
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+/* COLUMNAS */
+.columnas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* LISTA DE CARACTERÍSTICAS */
+.caracteristicas {
+    text-align: center; /* Alineación centrada para esta sección */
+}
+
+.lista-caracteristicas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.caracteristica {
+    background: rgba(15, 23, 42, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.caracteristica:hover {
+    background: rgba(124, 58, 237, 0.1);
+    transform: scale(1.05);
+}
+
+.caracteristica i {
+    font-size: 2.5rem;
+    color: #7c3aed; /* Violeta vibrante */
+    margin-bottom: 20px;
+}
+
+.caracteristica h4 {
+    margin-bottom: 15px;
+}
+
+.caracteristica p {
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* BOTÓN DE ACCIÓN */
+.boton-accion {
+    display: block;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #f59e0b, #fbbf24); /* Gradiente amarillo vibrante */
+    color: #0f172a; /* Texto oscuro para contraste */
+    border: none;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);
+}
+
+.boton-accion:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.6);
+    background: linear-gradient(135deg, #fbbf24, #fcd34d);
+}
+
+.boton-accion i {
+    margin-right: 10px;
+}
+
+/* PIE DE PÁGINA */
+.pie-pagina {
+    background: #1e293b; /* Azul oscuro */
+    padding: 50px 0 30px;
+    margin-top: 60px;
+}
+
+.info-footer {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.info-footer h3 {
+    font-size: 2rem;
+    color: #60a5fa;
+    margin-bottom: 20px;
+}
+
+.direccion, .contacto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.direccion i, .contacto i {
+    color: #fbbf24;
+}
+
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.red-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #e2e8f0;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.red-social:hover {
+    background: #7c3aed;
+    transform: translateY(-5px);
+    color: white;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.copyright i {
+    color: #ef4444; /* Rojo vibrante */
+    margin: 0 5px;
+}
+
+/* ICONOS EN TÍTULOS */
+h2 i, h3 i {
+    font-size: 1.8rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 2.5rem;
+    }
+    
+    .slogan {
+        font-size: 1.1rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    h3 {
+        font-size: 1.4rem;
+    }
+    
+    .seccion {
+        padding: 30px 20px;
+    }
+    
+    .columnas {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .lista-caracteristicas {
+        grid-template-columns: 1fr;
+    }
+    
+    .boton-accion {
+        padding: 15px 30px;
+        font-size: 1.1rem;
+    }
+}

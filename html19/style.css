@@ -1,0 +1,80 @@
+/* --- RESET BÁSICO --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+}
+
+/* --- ESTRUCTURA DE PÁGINA --- */
+.header { background: #1e293b; color: white; padding: 20px; text-align: center; }
+.content { flex-grow: 1; padding: 100px 20px; text-align: center; }
+.footer { background: #1e293b; color: #94a3b8; padding: 20px; text-align: center; }
+
+/* --- EL TOOLTIP (LA MAGIA) --- */
+
+.tooltip-trigger {
+    position: relative; /* Base para el cuadro */
+    color: #3b82f6;
+    font-weight: bold;
+    cursor: help;
+    border-bottom: 2px dashed #3b82f6;
+}
+
+/* EL CUADRO OSCURO (after) */
+.tooltip-trigger::after {
+    content: attr(data-tooltip); /* Genera el contenido del HTML */
+    position: absolute;
+    bottom: 160%; /* Lo sube por encima del texto */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px); /* Centrado y un poco abajo */
+    
+    /* Estilo del cuadro */
+    background-color: #0f172a;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    width: 200px; /* Tamaño fijo para que se vea claro */
+    text-align: center;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+
+    /* INICIALMENTE OCULTO */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-out;
+}
+
+/* LA FLECHITA (before) */
+.tooltip-trigger::before {
+    content: "";
+    position: absolute;
+    bottom: 135%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* Triángulo */
+    border-width: 8px 8px 0 8px;
+    border-style: solid;
+    border-color: #0f172a transparent transparent transparent;
+
+    /* INICIALMENTE OCULTA */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-out;
+}
+
+/* --- AL HACER HOVER APARECE TODO --- */
+.tooltip-trigger:hover::after,
+.tooltip-trigger:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0); /* Sube suavemente */
+}

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botón Impulsable - Transformación Creativa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0c0c2e 0%, #1a1a3e 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #ff3366, #ff9933, #ff3366);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shine 3s linear infinite;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #a0a0d0;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            margin: 40px 0;
+        }
+        
+        .original-content {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .original-content h2 {
+            color: #ff9966;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .original-text {
+            color: #c0c0e0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: left;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        /* BOTÓN TRANSFORMADO - Con todas las especificaciones */
+        .pulsable-button {
+            display: inline-block;
+            text-decoration: none; /* Elimina decoración de texto del enlace */
+            
+            /* Padding para darle cuerpo y tamaño */
+            padding: 24px 48px;
+            
+            /* Color de fondo que contrasta con el diseño */
+            background: linear-gradient(135deg, #ff3366 0%, #ff6600 100%);
+            
+            /* Bordes redondeados para un look moderno */
+            border-radius: 50px;
+            
+            /* Transición para cambio de color fluido */
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            
+            /* Propiedades de texto */
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            
+            /* Efectos visuales */
+            box-shadow: 0 10px 30px rgba(255, 51, 102, 0.4),
+                        0 0 0 4px rgba(255, 255, 255, 0.1),
+                        inset 0 0 20px rgba(255, 255, 255, 0.2);
+            
+            /* Posición relativa para efectos internos */
+            position: relative;
+            overflow: hidden;
+            
+            /* Cursor cambia a mano al posicionarse encima */
+            cursor: pointer;
+            
+            /* Animación de pulsación sutil */
+            animation: pulse 2s infinite;
+        }
+        
+        /* Efecto hover con cambio de color */
+        .pulsable-button:hover {
+            /* Cambio de color de fondo al hacer hover */
+            background: linear-gradient(135deg, #00ccff 0%, #0066ff 100%);
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 102, 255, 0.6),
+                        0 0 0 6px rgba(255, 255, 255, 0.15),
+                        inset 0 0 30px rgba(255, 255, 255, 0.3);
+            letter-spacing: 2px;
+        }
+        
+        /* Efecto de clic */
+        .pulsable-button:active {
+            transform: translateY(-2px) scale(0.98);
+            transition: all 0.1s ease;
+        }
+        
+        /* Elementos decorativos del botón */
+        .button-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .energy-icon {
+            font-size: 2rem;
+            animation: spin 3s linear infinite;
+        }
+        
+        .button-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+            border-radius: 50px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+        
+        .pulsable-button:hover .button-glow {
+            opacity: 1;
+        }
+        
+        .souls-counter {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #a0a0d0;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 12px 25px;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .souls-counter:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
+        
+        .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+            max-width: 800px;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 15px 25px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 1.5rem;
+            color: #ff9966;
+        }
+        
+        .instructions {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 800px;
+            margin: 60px auto 30px;
+            border-left: 5px solid #ff3366;
+            text-align: left;
+        }
+        
+        .instructions h3 {
+            color: #ff9966;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .instructions ul {
+            padding-left: 20px;
+            color: #c0c0e0;
+            line-height: 1.8;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        
+        .instructions strong {
+            color: #fff;
+        }
+        
+        /* Animaciones */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 10px 30px rgba(255, 51, 102, 0.4),
+                            0 0 0 4px rgba(255, 255, 255, 0.1),
+                            inset 0 0 20px rgba(255, 255, 255, 0.2);
+            }
+            50% {
+                box-shadow: 0 10px 40px rgba(255, 51, 102, 0.6),
+                            0 0 0 6px rgba(255, 255, 255, 0.15),
+                            inset 0 0 25px rgba(255, 255, 255, 0.25);
+            }
+            100% {
+                box-shadow: 0 10px 30px rgba(255, 51, 102, 0.4),
+                            0 0 0 4px rgba(255, 255, 255, 0.1),
+                            inset 0 0 20px rgba(255, 255, 255, 0.2);
+            }
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .pulsable-button {
+                padding: 20px 35px;
+                font-size: 1.5rem;
+            }
+            
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .feature {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Botón Impulsable</h1>
+        <p class="subtitle">Transformando un simple enlace en una experiencia interactiva y visualmente impactante</p>
+        
+        <div class="original-content">
+            <h2>Contenido Original</h2>
+            <div class="original-text">
+                # PULSA LO IMPULSABLE!<br><br>
+                Un botón con tanta energía que casi se pulsa solo<br><br>
+                DESCUBRE EL PODER! Clic libera energía cósmica<br>
+                →<br>
+                247<br>
+                almas ya sucumbieron al impulso<br>
+                🔗Lujo 🛠️Velocidad 📄Protección<br><br>
+                Este no es un botón... es un portal a lo extraordinario
+            </div>
+        </div>
+        
+        <div class="button-container">
+            <!-- BOTÓN TRANSFORMADO CON TODAS LAS ESPECIFICACIONES -->
+            <a href="#" class="pulsable-button" id="impulsableBtn">
+                <div class="button-glow"></div>
+                <div class="button-content">
+                    <i class="fas fa-bolt energy-icon"></i>
+                    <span>DESCUBRE EL PODER</span>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+            
+            <div class="souls-counter">
+                <i class="fas fa-users"></i>
+                <span><strong id="soulsCount">247</strong> almas ya sucumbieron al impulso</span>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-gem feature-icon"></i>
+                    <span>Lujo</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-tachometer-alt feature-icon"></i>
+                    <span>Velocidad</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-shield-alt feature-icon"></i>
+                    <span>Protección</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3>Características implementadas en el botón:</h3>
+            <ul>
+                <li><strong>Padding generoso:</strong> 24px vertical y 48px horizontal para darle cuerpo y tamaño</li>
+                <li><strong>Esquinas redondeadas:</strong> Border-radius de 50px para un look moderno y suave</li>
+                <li><strong>Color de fondo contrastante:</strong> Gradiente de rosa a naranja que destaca sobre el fondo oscuro</li>
+                <li><strong>Sin decoración de texto:</strong> Se eliminó el subrayado predeterminado del enlace</li>
+                <li><strong>Transición fluida:</strong> Animación suave de 0.4s para cambios de color y transformaciones</li>
+                <li><strong>Cursor personalizado:</strong> Cambia a mano (pointer) al posicionarse sobre el botón</li>
+                <li><strong>Efecto hover:</strong> Cambia a gradiente azul, se eleva y aumenta de tamaño</li>
+                <li><strong>Efectos visuales adicionales:</strong> Sombra, brillo interno y animación de pulso</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.getElementById('impulsableBtn');
+            const soulsCounter = document.getElementById('soulsCount');
+            let souls = 247;
+            
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Incrementar contador de almas
+                souls++;
+                soulsCounter.textContent = souls;
+                
+                // Efecto visual de clic
+                button.style.transform = 'scale(0.95)';
+                button.style.boxShadow = '0 5px 15px rgba(255, 51, 102, 0.8)';
+                
+                // Restaurar después de un breve momento
+                setTimeout(() => {
+                    button.style.transform = '';
+                    button.style.boxShadow = '';
+                    
+                    // Mensaje de energía liberada
+                    alert('¡ENERGÍA CÓSMICA LIBERADA!\nPortal a lo extraordinario activado.');
+                }, 150);
+                
+                // Efecto de partículas (simulado con cambio de color rápido)
+                let originalBackground = button.style.background;
+                button.style.background = 'linear-gradient(135deg, #ffff00 0%, #ff00ff 100%)';
+                
+                setTimeout(() => {
+                    button.style.background = originalBackground;
+                }, 300);
+            });
+            
+            // Efecto aleatorio de energía en el botón
+            setInterval(() => {
+                if (Math.random() > 0.7) {
+                    const glow = button.querySelector('.button-glow');
+                    glow.style.opacity = '0.8';
+                    
+                    setTimeout(() => {
+                        glow.style.opacity = '';
+                    }, 500);
+                }
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

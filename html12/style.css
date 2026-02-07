@@ -1,0 +1,114 @@
+/* Configuración General */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.form-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+/* 1. Estado Base e Interactividad */
+input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 2. Efecto de Sombra al Foco */
+input:focus {
+    border-color: #5352ed;
+    box-shadow: 0 0 15px rgba(83, 82, 237, 0.2);
+    outline: none;
+    transform: translateY(-1px);
+}
+
+/* 3. Validación Visual: ERROR (Rojo) */
+/* Solo se activa si el usuario ha empezado a escribir (:not(:placeholder-shown)) */
+input:not(:placeholder-shown):invalid {
+    border-color: #ff4757;
+    background-color: #fff5f5;
+    animation: shake 0.3s ease-in-out;
+}
+
+input:not(:placeholder-shown):invalid + .msg-error {
+    display: block;
+    color: #ff4757;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* 4. Validación Visual: ÉXITO (Verde) */
+input:not(:placeholder-shown):valid {
+    border-color: #2ed573;
+    background-color: #f7fff9;
+}
+
+/* 5. El Botón Inteligente */
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #ccc; /* Estado deshabilitado visualmente */
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: not-allowed;
+    transition: all 0.3s ease;
+}
+
+/* Estilo del botón cuando TODO el formulario es válido */
+form:valid button {
+    background: linear-gradient(135deg, #5352ed, #7158e2);
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(83, 82, 237, 0.4);
+}
+
+form:valid button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+/* Animación de error */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+.msg-error {
+    display: none;
+}

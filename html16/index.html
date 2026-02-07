@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables Maestras y Modo Oscuro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+        <button id="theme-toggle" class="btn-toggle">🌓 Cambiar Tema</button>
+        
+        <div class="content">
+            <h1>Control Centralizado</h1>
+            <p>Este diseño utiliza <strong>Variables CSS</strong>. Al cambiar el tema, no reescribimos los estilos, solo redefinimos los valores de las variables.</p>
+            <div class="box">Elemento de Acento</div>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.getElementById('theme-toggle');
+        btn.onclick = () => document.body.classList.toggle('dark-mode');
+    </script>
+</body>
+</html>

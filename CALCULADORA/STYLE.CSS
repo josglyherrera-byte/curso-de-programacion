@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Fredoka', sans-serif; /* Usamos la nueva fuente */
+}
+
+body {
+
+    /* Imagen */
+    background-image: url('https://i.pinimg.com/1200x/2e/80/c3/2e80c3b8dad85b7778d1109c18005e9b.jpg'); 
+    background-size: cover;      /* Hace que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-attachment: fixed; /* La imagen no se mueve al hacer scroll */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 75px); /* Botones un poco más grandes */
+    grid-template-rows: minmax(110px, auto) repeat(6, 65px); /* Pantalla más alta, botones más altos */
+    gap: 12px; /* Espacio entre botones */
+    background-color: #f8bbd0; /* Rosa pastel para el cuerpo de la calculadora */
+    padding: 25px;
+    border-radius: 25px; /* Bordes muy redondeados */
+    box-shadow: 0px 15px 40px rgba(255, 105, 180, 0.4); /* Sombra rosada, más 'pop' */
+    border: 3px solid #f48fb1; /* Borde más oscuro */
+}
+
+.display {
+    grid-column: 1 / -1;
+    background-color: #fffde7; /* Color crema para la pantalla */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 20px;
+    word-break: break-all;
+    border-radius: 15px; /* Bordes redondeados para la pantalla */
+    margin-bottom: 15px;
+    border: 2px solid #ffccbc; /* Borde suave en la pantalla */
+    box-shadow: inset 0px 2px 5px rgba(0,0,0,0.1); /* Sombra interna para profundidad */
+}
+
+#current-operand { 
+    color: #4e342e; /* Color de texto chocolate */
+    font-size: 2.8rem; /* Letra más grande */
+    font-weight: 600; /* Negrita */
+}
+
+button {
+    cursor: pointer;
+    font-size: 1.5rem; /* Letra más grande en botones */
+    border: none;
+    border-radius: 15px; /* Bordes muy redondeados en botones */
+    background-color: #fce4ec; /* Rosa muy claro para los números por defecto */
+    color: #4e342e; /* Color de texto chocolate */
+    transition: all 0.2s ease; /* Transiciones suaves */
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1); /* Sombra suave en botones */
+}
+
+button:hover { 
+    background-color: #ffe0b2; /* Tono naranja claro al pasar el ratón */
+    transform: translateY(-2px); /* Un pequeño efecto de levantamiento */
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.15);
+}
+button:active { 
+    transform: translateY(0); /* Vuelve a su posición original al hacer clic */
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+    background-color: #ffccbc; /* Tono más oscuro al hacer clic */
+}
+
+.span-two { grid-column: span 2; }
+
+/* Nuevos colores para botones especiales */
+.col-pink-strong { background-color: #e91e63; color: white; } /* AC: Rosa fuerte */
+.col-pink-strong:hover { background-color: #c2185b; }
+.col-pink-strong:active { background-color: #ad1457; }
+
+.col-pink-light { background-color: #ff80ab; color: white; } /* DEL, %: Rosa claro */
+.col-pink-light:hover { background-color: #ff4081; }
+.col-pink-light:active { background-color: #f50057; }
+
+.col-purple { background-color: #ce93d8; color: white; } /* Científicas: Morado suave */
+.col-purple:hover { background-color: #ab47bc; }
+.col-purple:active { background-color: #9c27b0; }
+
+.col-operator { background-color: #a7ffeb; color: #4e342e; } /* Operadores: Turquesa */
+.col-operator:hover { background-color: #64ffda; }
+.col-operator:active { background-color: #1de9b6; }
+
+.col-equal { background-color: #80cbc4; color: white; font-weight: bold; } /* Igual: Verde azulado */
+.col-equal:hover { background-color: #26a69a; }
+.col-equal:active { background-color: #00897b; }
